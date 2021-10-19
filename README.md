@@ -1,16 +1,18 @@
 ### **Main vscode plugins**
 
-#### *Node Essentials*
+- #### ***JavaScript Pack***
 
-#### *Node.js Extension Pack*
+- #### ***node-snippets*** 
 
-#### *Fastify Snippets*
+- #### ***Node.js Extension Pack***
 
-#### *Bracket Pair Colorizer*
+- #### ***Fastify Snippets***
 
-#### *Fastify code snippets*
+- #### ***Bracket Pair Colorizer***
 
-#### *Node.js Modules Intellisense*  
+- #### ***Fastify code snippets***
+
+- #### ***Node.js Modules Intellisense***  
 <br/>
 
 ### **Creating starters**
@@ -22,16 +24,18 @@ npm i -g express-generator@4
 express --hbs express-web-server
 ```
 
-### **Fastify**
+### **fastify**
 
 ```sh
 npm init fastify
+npm install
 ```
 
-or
+***or***
 
 ```sh
 npm init fastify -- --integrate #(if package.json already exists)
+npm install
 ```
 
 ### **Main Fastify Plugins**
@@ -46,7 +50,7 @@ npm i --save-dev fastify-static
 ```
 
 ----
-Serving web content
+***Serving web content***
 
 - fastify plugin (fastify-static)
 
@@ -122,7 +126,7 @@ consuming other services
 
 you can use got package
 
-npm install got
+```npm install got```
 
 code sample here <https://github.com/abbathaw/fastify-got>
 
