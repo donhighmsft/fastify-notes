@@ -1,0 +1,5 @@
+### GET ALL ITEMS
+GET http://localhost:3000/ HTTP/1.1
+
+### GET FAKE ITEMS
+GET http://localhost:3000/example HTTP/1.1
