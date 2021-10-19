@@ -139,7 +139,6 @@ use fastify plugin
 ```
 const replyFrom = require('fastify-reply-from')
 fastify.register(replyFrom)
-
 ```
 
 In code then you can do sth like this
@@ -221,7 +220,6 @@ preventing parameter pollution (lab)
 This is a small Express service that uppercases any input sent via a ​un​ query string parameter,but it waits one second before sending the response.This service is vulnerable to parameter pollution. A URL such as<http://localhost:3000/?un=a&un=b>​ will cause the service to crash, assuming the service islistening on port 3000.Fix it, without changing any of the current functionality.
 
 ```js
-
 'use strict'
 const express = require('express')
 const app = express()
