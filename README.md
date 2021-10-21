@@ -301,3 +301,20 @@ const queryOptions = {
   },
 };
 ```
+
+### **Create Fastify Module**
+
+```js
+
+'use strict' 
+/**
+ *
+ * @param {import('fastify').FastifyInstance} fastify
+ */
+ module.exports = async function(fastify, opts, next) { 
+    
+}
+
+```
+### **Great Fastify Link**
+<https://github.com/hidjou/classsed-fastify-tutorial>
