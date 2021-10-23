@@ -39,14 +39,8 @@ module.exports = async function (fastify, opts) {
         throw notFound();
       }
       if (err.response.statusCode === 200) {
-        //console.log(`myerror.response:`, err.response.statusCode);
-        //throw internalServerError();
+        throw internalServerError();
       }
-
-      console.log("I'm here!!!!");
-
-      //throw err;
-      //
     }
   });
 };

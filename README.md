@@ -290,6 +290,28 @@ const postOptions = {
     },
   },
 };
+
+//Validate
+
+{
+  brand: "samsung",
+  color: "black"
+}
+
+
+  const postOptions2 = {
+    schema: {
+      body: {
+        type: "object",
+        required: ["brand", "color"],
+        additionalProperties: false,
+        properties: {
+          brand: { type: "string" },
+          color: { type: "string" },
+        },
+      },
+    },
+  };
 ```
 
 ```js
