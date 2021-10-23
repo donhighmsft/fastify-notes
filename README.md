@@ -27,15 +27,23 @@ express --hbs express-web-server
 ### **fastify**
 
 ```sh
-npm init fastify
+npm i fastify-cli -g #install cli
+#or
+npm init fastify  #bootstrap project
+
 npm install
 ```
 
 ***or***
 
 ```sh
+fastify generate . --integrate #(if package.json already exists)
+#or
 npm init fastify -- --integrate #(if package.json already exists)
+
 npm install
+
+
 ```
 
 ### **Main Fastify Plugins**
@@ -136,7 +144,7 @@ proxying requests (single route, multi origin proxy)
 
 use fastify plugin
 
-```
+```js
 const replyFrom = require('fastify-reply-from')
 fastify.register(replyFrom)
 ```
@@ -293,6 +301,7 @@ const queryOptions = {
   schema: {
     querystring: {
       type: "object",
+      required: ["name", "excitement"],
       properties: {
         name: { type: "string" },
         excitement: { type: "integer" },
@@ -313,8 +322,31 @@ const queryOptions = {
  */
  module.exports = async function(fastify, opts, next) { 
     
-}
+ }
+
+//Deny Ip 211.133.33.11
+const fp = require("fastify-plugin");
+
+module.exports = fp(async function (fastify, opts) {
+  const { forbidden } = fastify.httpErrors;
+  fastify.addHook("onRequest", function hook(request, reply, done) {
+    
+    if (request.ip === "211.133.33.113") {
+      throw forbidden();
+    }
+    done();
+  });
+});
 
 ```
+
+### **Fastify Sensible**
+
+```js
+const { badRequest, forbidden, notFound, methodNotAllowed, internalServerError  } = fastify.httpErrors;
+
+```
+
 ### **Great Fastify Link**
+
 <https://github.com/hidjou/classsed-fastify-tutorial>
