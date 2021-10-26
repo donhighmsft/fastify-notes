@@ -9,6 +9,17 @@
 //npm i --save fastify-reply-from
 //npm i --save fastify-http-proxy
 
+//Async in fastify
+//promisfy in util module
+const { promisify } = require('util'); 
+const delay = promisify(setTimeout)
+
+await delay(200)
+
+//promise constructor
+await new Promise(resolve => setTimeout(resolve, 100));
+
+
 //Views and Layouts
 "use strict";
 const path = require("path");
