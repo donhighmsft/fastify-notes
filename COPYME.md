@@ -2,6 +2,8 @@
 //Copy and Paste Info
 //npm i fastify-cli -g #install cli
 //npm init fastify -- --integrate #(if package.json already exists)
+//fastify generate . --integrate #(if package.json already exists)
+//npm install
 
 //npm i --save fastify-static
 //npm i --save point-of-view 
