@@ -21,6 +21,27 @@ await delay(200)
 //promise constructor
 await new Promise(resolve => setTimeout(resolve, 100));
 
+//Static Layout
+const fastify = require('fastify')()
+const path = require('path')
+
+fastify.register(require('fastify-static'), {
+  root: path.join(__dirname, 'public'),
+  prefix: '/public/', // optional: default '/'
+})
+
+fastify.get('/another/path', function (req, reply) {
+  return reply.sendFile('myHtml.html') // serving path.join(__dirname, 'public', 'myHtml.html') directly
+})
+
+fastify.get('/path/with/different/root', function (req, reply) {
+  return reply.sendFile('myHtml.html', path.join(__dirname, 'build')) // serving a file from a different root location
+})
+
+fastify.get('/another/path', function (req, reply) {
+  return reply.sendFile('myHtml.html', { cacheControl: false }) // overriding the options disabling cache-control headers
+})
+
 
 //Views and Layouts
 "use strict";
